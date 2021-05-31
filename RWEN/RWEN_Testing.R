@@ -22,7 +22,7 @@ for (cv in 1:n_fold){
     x_train = X_train[!is.na(y_train),]
     y_train = y_train[!is.na(y_train)]
 
-    list_train = Validation(3, X_train, Y_train)
+    list_train = Validation(n_fold, X_train, Y_train)
   
     Result = IterWeight(X.train = x_train[list_train[[cv,1]],], X.test = X_test,
                     y.train = y_train[list_train[[cv,1]]], y.test = Y_test[,i])
